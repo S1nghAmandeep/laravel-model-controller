@@ -5,17 +5,32 @@
 <section>
     <div class="container">
         <div class="row">
-            
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Titolo</th>
+                        <th scope="col">Titolo originale</th>
+                        <th scope="col">Nazionalità</th>
+                        <th scope="col">Data di uscità</th>
+                        <th scope="col">Voto</th>
+                      </tr>
+                    </thead>
                 @forelse ($movies as $movie)
-                <div class="col-4">
-                   <h1>{{ $movie->title }}</h1>
-                   <h3>{{ $movie->original_title }}</h3>
-                   <h4>{{ $movie->nationality }}</h4>
-
-                </div>
+                    <tbody>
+                      <tr>
+                        <th scope="row"></th>
+                        <td>{{ $movie->title }}</td>
+                        <td>{{ $movie->original_title }}</td>
+                        <td>{{ $movie->nationality }}</td>
+                        <td>{{ $movie->date}}</td>
+                        <td>{{ $movie->vote }}</td>
+                      </tr>
                 @empty
                     non ci sono risultati
                 @endforelse
+            </tbody>
+        </table>
         </div>
     </div>
 </section>
